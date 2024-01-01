@@ -7,10 +7,15 @@ import { RootState } from '../store'
  * using useAppSelector, for example, add this at the beginning of the component to make it
  * subscribe to the user updated signal:
  *     useAppSelector(selectUserUpdatedSignal)
+ *     useEffect(() => {
+ *         // This callback function will be invoked when the userUpdatedSignal flips
+ *     }, [selectUserUpdatedSignal])
+ *
  * Since the user updated signal flips every time the user is updated, the component is refreshed.
  * On the other hand, make sure to notify user updated if the user is updated in the following way:
  *     const dispatch = useDispatch()
  *     dispatch(notifyUserUpdated)
+ *
  * Feel free to add other types of signals to this class.
  * @author James Chan
  */
